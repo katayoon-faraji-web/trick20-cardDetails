@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: font1;
+    src: url("../font/Josefin_Sans/JosefinSans-VariableFont_wght.ttf") format("opentype");
+}

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/output.css">
+    <style>
+        *{
+            padding: 0;margin: 0;box-sizing: border-box;
+            
+        }
+        /* body ,main , #wholebox , #card{
+            transform-style: preserve-3d;
+        } */
+      
+    </style>
+</head>
+<body id="bd" class="font-primary text-fontcolor">
+    <main id="mn" class="w-full h-[150vh] lg:h-[100vh] flex flex-wrap justify-center content-center ">
+        <h1 class="text-fontcolor text-[40px] w-full m-7 text-center">Enter Card Details</h1>
+        <section id="wholebox" class="w-full lg:w-[80%] flex flex-wrap justify-center lg:justify-between content-center p-10">
+            <!-- left side -->
+            <div id="form" class="flex flex-wrap justify-center lg:justify-start content-center h-auto  w-[500px] ">
+                <!-- first row -->
+                <div id="firstrow" class="w-full flex flex-wrap justify-start content-center ">
+                    <label for="cardnum" class="w-full text-[20px] text-start px-2">Card Number</label>
+                    <div id="cardnum" class="w-full flex flex-wrap justify-start content-center">
+                        <input type="text" class=" rounded-md w-[20%] h-[50px] bg-inputcolor mx-2 px-1">
+                        <input type="text" class=" rounded-md w-[20%] h-[50px] bg-inputcolor mx-2 px-1">
+                        <input type="text" class=" rounded-md w-[20%] h-[50px] bg-inputcolor mx-2 px-1">
+                        <input type="text" class=" rounded-md w-[20%] h-[50px] bg-inputcolor mx-2 px-1">
+                    </div>
+                </div>
+                <!-- second row -->
+                <div id="secrow" class="w-full flex flex-wrap justify-start content-center my-5">
+                    <label for="CardHolderName" class="w-full text-[20px] text-start px-2">Card Holder's Name</label>
+                    <input oninput="_name(event)" type="text" id="CardHolderName" class=" rounded-md w-[89%] bg-inputcolor h-[50px] mx-2 px-1">
+                </div>
+                <!-- third row -->
+                <div id="thirdrow" class="w-full flex flex-wrap justify-between content-center px-2">
+                    <div id="validity" class="w-[45%] flex flex-wrap justify-start content-center ">
+                        <label for="" class="w-full text-[20px] text-start px-2">Valid Till</label>
+                        
+                        <input oninput="_year(event)" type="text" id="year" class="w-[25%] bg-inputcolor h-[50px] px-1">
+                        <span class="w-[10%] h-[50px] text-[50px] flex justify-center items-center pt-4 text-white bg-inputcolor">/</span>
+                        <input oninput="_month(event)" type="text" id="month" class="w-[25%] bg-inputcolor h-[50px] px-1">
+                    </div>
+                    <div id="cvv2" class="w-[45%] flex flex-wrap justify-start content-center">
+                        <label for="CVV2input" class="w-full text-[20px] text-start px-2">CVV2</label>
+                        <input oninput="inputcvv2(event)" type="text" id="CVV2input" class=" rounded-md w-[50%] bg-inputcolor h-[50px] mx-2 px-1">
+                    </div>
+                </div>
+            </div>
+
+            <!-- right side -->
+            
+
+            <!-- card -->
+            <div id="card" class="w-full md:w-[45%] relative transition-all duration-300 flex justify-center lg:justify-start content-center h-[300px] origin-center">
+                <!-- backside -->
+                <div id="back" class="absolute border border-bg flex w-[400px]  md:w-[450px] h-[90%] bg-cardcolor rounded-xl flex-wrap justify-center content-start mx-auto my-5 shadow-[rgba(6,_24,_44,_0.4)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset]">
+                    <div id="serialnum" class="w-full text-start text-[15px] my-2"><span class="p-2">136589520</span></div>
+                    <div id="darkbox" class="w-full h-[40px]  bg-bg"></div>
+                    <div class="w-[80%] flex flex-wrap justify-end content-center mt-2">
+                        <span  class="w-full text-[30x] text-end text-white">CVV2</span>
+                        <div id="cvv2back" class="w-full h-[40px] bg-white rounded-xl text-inputcolor text-[20px] flex items-center justify-center px-2"></div>
+                    </div>
+                </div>
+                <!-- frontside -->
+                <div id="front" class="absolute w-[400px]  md:w-[450px] h-[90%] bg-cardcolor rounded-xl flex flex-wrap justify-center content-center mx-auto my-5 shadow-[rgba(6,_24,_44,_0.4)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset] ">
+                    <div id="logo" class="w-[90%] h-[50px] flex justify-start items-center"><div class="w-[40%] h-full bg-[url('../img/2.png')] bg-no-repeat bg-contain"></div></div>
+                    <p id="numberoncard" class="w-[90%] h-[50px] border my-6 rounded-xl flex justify-center content-center relative">
+                        <span class="h-full w-[20%] text-[20px] flex justify-end items-center text-white"> - </span>
+                        <span class="h-full w-[20%] text-[20px] flex justify-end items-center text-white"> - </span>
+                        <span class="h-full w-[20%] text-[20px] flex justify-end items-center text-white"> - </span>
+                        <span class="h-full w-[20%] text-[20px] flex justify-end items-center text-white"></span>
+    
+                        
+                    </p>
+                    <div id="infooncard" class="w-[90%] flex flex-wrap justify-between content-center ">
+                        <div id="nameoncard" class="w-[65%] flex flex-wrap justify-start content-center overflow-x-hidden">
+                            <span class="flex w-full text-[20px] text-start ">Card Holder</span>
+                            <h2 class="h-[50px] w-full text-white"></h2>
+                        </div>
+                        <div id="dateoncard" class="w[20%] flex flex-wrap justify-start content-center">
+                            <span class="w-full flex  text-[20px] text-start ">Valid Till</span>
+                            <h2 id="yearoncard" class="h-[50px] w-[45%] flex justify-center items-center text-center text-white"></h2>
+                            <span class="w-[10%] h-[50px] text-[40px] flex justify-center items-center pt-4 text-white">/</span>
+                            <h2 id="monthoncard" class="h-[50px] w-[45%] flex justify-center items-center text-center text-white"></h2>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    
+
+    <script>
+        let cvv2input = document.getElementById('CVV2input')
+        let cvv2back = document.getElementById('cvv2back')
+        let card = document.getElementById('card')
+        let backside = document.getElementById('back')
+        let frontside = document.getElementById('front')
+        let inputs_1 =document.querySelectorAll('#cardnum>input')
+        let inputs =document.querySelectorAll('input')
+        let numberoncard = document.getElementById('numberoncard')
+        let spans = document.querySelectorAll('#numberoncard>span')
+        let ValidTill = document.getElementById('ValidTill')
+        let CardHolderName = document.getElementById('CardHolderName')
+        let nameoncard = document.querySelector('#nameoncard>h2')
+        let monthoncard = document.getElementById('monthoncard')
+        let yearoncard = document.getElementById('yearoncard')
+        let yearinput = document.getElementById('year')
+        let monthinput = document.getElementById('month')
+
+        document.getElementById('bd').style.transformStyle = "preserve-3d";
+        document.getElementById('mn').style.transformStyle = "preserve-3d";
+        document.getElementById('wholebox').style.transformStyle = "preserve-3d";
+        document.getElementById('card').style.transformStyle = "preserve-3d";
+        document.getElementById('back').style.transformStyle = "preserve-3d";
+        document.getElementById('front').style.transformStyle = "preserve-3d";
+
+        inputs.forEach((a , i)=>{
+            if(i!=inputs.length-1){
+                a.addEventListener("click", (e)=>{
+                    // e.stopImmediatePropagation()
+                    inputs.forEach((b)=>{
+                        b.addEventListener('click',reset_inputs())
+                    })
+                    a.style.background = '#27272a'
+                })
+            }
+        })
+        cvv2input.addEventListener('click',(e)=>{
+            e.stopImmediatePropagation()
+            inputs.forEach((b)=>{
+                b.addEventListener('click',reset_inputs())
+            })
+            card.setAttribute('data-state','rotated')
+            card.style.transform = 'perspective(800px)rotateY(180deg)'
+            backside.style.transform = 'perspective(800px)rotateY(180deg)'
+            frontside.style.transform = 'perspective(800px)rotateY(180deg)'
+            backside.style.zIndex = '10'
+            e.target.style.background = '#27272a'
+            inputcvv2(e)
+        })
+        
+        function inputcvv2(e){
+            
+            cvv2input_val = String(cvv2input.value) 
+            if(cvv2input_val.search(/[a-z]/)>=0 || cvv2input_val.search(/[ا-ی]/)>=0){
+                cvv2input.value = cvv2input.value.slice(0,(cvv2input.value).length-1)
+            }
+            cvv2back.innerHTML = cvv2input.value
+        }
+
+        card.addEventListener('click',(e)=>{
+            e.stopImmediatePropagation()
+        })
+
+        window.addEventListener('click',()=>{
+            inputs.forEach((b)=>{
+                b.style.background = '#171717'
+            })
+            if((card.getAttribute('data-state')=='rotated')){
+                card.style.transform = 'perspective(800px)rotateY(360deg)'
+                backside.style.transform = 'perspective(800px)rotateY(360deg)'
+                frontside.style.transform = 'perspective(800px)rotateY(360deg)'
+                backside.style.zIndex = '0'
+            }
+        })
+
+        function reset_inputs(){
+            inputs.forEach((z)=>{
+                z.style.background = '#171717'
+            })
+        }
+
+        function _name(e){
+            reset_inputs()
+            CardHolderName.focus()
+            let txtt = String(CardHolderName.value) 
+            if(txtt.search(/[0-9]/)>=0 || (CardHolderName.value).length>30){
+                CardHolderName.value = (CardHolderName.value).slice(0,(CardHolderName.value).length-1)
+            }
+            nameoncard.innerHTML = CardHolderName.value
+            
+        }
+
+        function _year(e){
+            let val = String(e.target.value)
+            if(val.search(/[a-z]/)>=0 || val.search(/[ا-ی]/)>=0){
+                e.target.value = e.target.value.slice(0,(e.target.value).length-1)
+            }
+            yearoncard.innerHTML = e.target.value 
+            if((e.target.value).length==2){
+                monthinput.focus()
+            }
+        }
+
+        function _month(e){
+            let val = String(e.target.value)
+            if(val.search(/[a-z]/)>=0 || val.search(/[ا-ی]/)>=0){
+                e.target.value = e.target.value.slice(0,(e.target.value).length-1)
+            }
+            
+            if((e.target.value).length>2){
+                e.target.value = (e.target.value).slice(0,(e.target.value).length-1)
+            }
+            if(e.target.value>=13 || e.target.value<=0 || e.target.value=='-'){
+                e.target.value = (e.target.value).slice(0,(e.target.value).length-1)
+            }
+            if(e.target.value<10){
+                monthoncard.innerHTML = '0' + e.target.value
+            }
+            else{
+                monthoncard.innerHTML = e.target.value
+            }
+        }
+        inputs_1.forEach((val , ind)=>{
+            val.addEventListener('click',(e)=>{
+                inputs_1.forEach((j)=>{
+                    j.style.background = '#171717'
+                })
+                val.style.transition = '.4s'
+                val.style.background = '#27272a'
+
+            })
+            val.addEventListener('keyup',(e)=>{
+                let value = String(val.value) 
+                if(value.search(/[a-z]/)>=0 || value.search(/[ا-ی]/)>=0){
+                    val.value = val.value.slice(0,(val.value).length-1)
+                }
+                if((val.value).length<5 ){
+                    
+                    if(ind==inputs_1.length-1){
+                        spans[ind].innerHTML = val.value
+                    }
+                    else{
+                        spans[ind].innerHTML = val.value +' - '
+                    }
+                    spans[ind].style.justifyContent='center'
+                    console.log((val.value).length+1);
+                    if((val.value).length ==4){
+                        if(e.target.nextElementSibling){
+                            e.target.nextElementSibling.focus()
+                            e.target.style.background = '#171717'
+                            e.target.nextElementSibling.style.background = '#27272a'
+                        }
+                        else {
+                            if(CardHolderName.value==''){
+                                _name()
+                            }
+                            else if(ValidTill.value==''){
+                                console.log("ValidTill");
+                            }
+                            else if(CVV2input.value==''){
+                                console.log("CVV2input");
+                            }
+                            
+                        }
+                        
+                    }
+                }
+               
+            })
+        })
+    </script>
+</body>
+</html>
